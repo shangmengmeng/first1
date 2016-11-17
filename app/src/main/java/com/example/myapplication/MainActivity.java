@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         android.app.FragmentManager fragmentManager = getFragmentManager();
         ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.frame1, fragments.get(1));
         ft.replace(R.id.frame1, fragments.get(0));
         ft.commit();
     }
@@ -95,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ll_4:
                 ll_4.setSelected(true);
                 ft.replace(R.id.frame1, fragments.get(3));
-                ft.show(fragments.get(3));
                 ft.show(fragments.get(3));
                 ft.commit();
                 break;
