@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       drawerLayout = (DrawerLayout) findViewById(R.id.activity_main);
+        drawerLayout = (DrawerLayout) findViewById(R.id.activity_main);
 
         ll_1 = (LinearLayout) findViewById(R.id.ll_1);
         ll_2 = (LinearLayout) findViewById(R.id.ll_2);
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         android.app.FragmentManager fragmentManager = getFragmentManager();
         ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.frame1, fragments.get(1));
         ft.replace(R.id.frame1, fragments.get(0));
         ft.commit();
     }
@@ -74,27 +75,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ll_1:
                 ll_1.setSelected(true);
                 ft.replace(R.id.frame1, fragments.get(0));
-                ft.show(fragments.get(0));
                 ft.commit();
-
                 break;
             case R.id.ll_2:
                 ll_2.setSelected(true);
                 ft.replace(R.id.frame1, fragments.get(1));
-                ft.show(fragments.get(1));
-                ft.addToBackStack(null);
                 ft.commit();
                 break;
             case R.id.ll_3:
                 ll_3.setSelected(true);
                 ft.replace(R.id.frame1, fragments.get(2));
-                ft.show(fragments.get(2));
                 ft.commit();
                 break;
             case R.id.ll_4:
                 ll_4.setSelected(true);
                 ft.replace(R.id.frame1, fragments.get(3));
-                ft.show(fragments.get(3));
                 ft.commit();
                 break;
             default:
